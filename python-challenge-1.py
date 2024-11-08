@@ -189,12 +189,14 @@ for item in order:
 
     # 8. Calculate the number of spaces for formatted printing
     num_item_spaces = 24 - len(item['Item name']) +1
-
-    # 9. Create space strings
+    num_price_spaces = 4 - len(str(item['Price']))
+   
+   # 9. Create space strings
     item_spaces = " " * num_item_spaces
+    price_spaces = " " * num_price_spaces
 
     # 10. Print the item name, price, and quantity
-    print(f"{item['Item name']}{item_spaces} | ${item['Price']} | {item['Quantity']}")
+    print(f"{item['Item name']}{item_spaces} | ${item['Price'] } {price_spaces} | {item['Quantity']}")
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum() and print the prices.
